@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/home">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+  <div text-center *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col>
+        <h3 style="text-align:center">{{timeObject.description}}</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h3 style="text-align:center">{{this.calculateDate()}}</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
